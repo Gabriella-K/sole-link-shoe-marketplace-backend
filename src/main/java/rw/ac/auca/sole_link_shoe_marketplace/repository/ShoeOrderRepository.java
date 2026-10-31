@@ -13,4 +13,10 @@ public interface ShoeOrderRepository extends JpaRepository<ShoeOrder, UUID> {
         LocalDate start,
         LocalDate end
     );
+
+    boolean existsByVendor_IdAndOrderDateAndStatusNot(
+        UUID vendorId,
+        LocalDate orderDate,
+        OrderStatus status
+    );
 }

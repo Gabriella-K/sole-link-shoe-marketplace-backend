@@ -1,8 +1,10 @@
+
 package rw.ac.auca.sole_link_shoe_marketplace.service;
 
 import rw.ac.auca.sole_link_shoe_marketplace.domain.OrderStatus;
 import rw.ac.auca.sole_link_shoe_marketplace.domain.ShoeOrder;
 import rw.ac.auca.sole_link_shoe_marketplace.repository.ShoeOrderRepository;
+
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -20,7 +22,23 @@ public class ShoeOrderService {
     }
 
     public String save(ShoeOrder shoeOrder) {
+
+        if (shoeOrder.getOrderDate().isBefore(LocalDate.now())) {
+            return "Shoe order date cannot be in the past";
+        }
+
+        if (shoeOrderRepository.existsByVendor_IdAndOrderDateAndStatusNot(
+                shoeOrder.getVendor().getId(),
+                shoeOrder.getOrderDate(),
+                OrderStatus.CANCELLED)) {
+
+            return "Vendor already has an order on that date";
+        }
+
+        shoeOrder.setStatus(OrderStatus.PLACED);
+
         shoeOrderRepository.save(shoeOrder);
+
         return "Shoe order saved successfully";
     }
 
@@ -33,22 +51,35 @@ public class ShoeOrderService {
     }
 
     public String update(UUID id, ShoeOrder shoeOrder) {
-        if (shoeOrderRepository.findById(id).isEmpty()) {
+
+        Optional<ShoeOrder> existingOrder = shoeOrderRepository.findById(id);
+
+        if (existingOrder.isEmpty()) {
             return "The shoe order with that id does not exist";
         }
 
-        shoeOrder.setId(id);
-        shoeOrderRepository.save(shoeOrder);
+        ShoeOrder order = existingOrder.get();
+
+        // Update the other fields
+        order.setOrderDate(shoeOrder.getOrderDate());
+        order.setBrand(shoeOrder.getBrand());
+        order.setPrice(shoeOrder.getPrice());
+        order.setBuyer(shoeOrder.getBuyer());
+        order.setVendor(shoeOrder.getVendor());
+
+        shoeOrderRepository.save(order);
 
         return "Shoe order updated successfully";
     }
 
     public String delete(UUID id) {
+
         if (shoeOrderRepository.findById(id).isEmpty()) {
             return "The shoe order with that id does not exist";
         }
 
         shoeOrderRepository.deleteById(id);
+
         return "Shoe order deleted successfully";
     }
 
@@ -56,7 +87,51 @@ public class ShoeOrderService {
         return shoeOrderRepository.findByStatusOrderByOrderDateAsc(status);
     }
 
-    public List<ShoeOrder> findBetweenDates(LocalDate start, LocalDate end) {
-        return shoeOrderRepository.findByOrderDateBetweenOrderByOrderDateAsc(start, end);
+    public List<ShoeOrder> findBetweenDates(
+            LocalDate start,
+            LocalDate end) {
+
+        return shoeOrderRepository
+                .findByOrderDateBetweenOrderByOrderDateAsc(start, end);
+    }
+
+    public String updateStatus(UUID id, OrderStatus newStatus) {
+
+        Optional<ShoeOrder> existingOrder = shoeOrderRepository.findById(id);
+
+        if (existingOrder.isEmpty()) {
+            return "The shoe order with that id does not exist";
+        }
+
+        ShoeOrder order = existingOrder.get();
+
+        OrderStatus currentStatus = order.getStatus();
+
+        boolean allowed = false;
+
+        if (currentStatus == OrderStatus.PLACED) {
+            if (newStatus == OrderStatus.PACKED ||
+                    newStatus == OrderStatus.CANCELLED) {
+                allowed = true;
+            }
+        }
+
+        else if (currentStatus == OrderStatus.PACKED) {
+            if (newStatus == OrderStatus.DELIVERED ||
+                    newStatus == OrderStatus.CANCELLED) {
+                allowed = true;
+            }
+        }
+
+        if (!allowed) {
+            return "Cannot change status from "
+                    + currentStatus + " to " + newStatus;
+        }
+
+        order.setStatus(newStatus);
+
+        shoeOrderRepository.save(order);
+
+        return "Shoe order status updated successfully";
     }
 }
