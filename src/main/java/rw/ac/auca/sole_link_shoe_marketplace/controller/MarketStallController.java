@@ -5,8 +5,8 @@ import rw.ac.auca.sole_link_shoe_marketplace.service.MarketStallService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.UUID;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/market-stalls")
@@ -65,5 +65,13 @@ public class MarketStallController {
         }
 
         return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+
+    @GetMapping("/free")
+    public ResponseEntity<List<MarketStall>> findFreeMarketStalls() {
+
+        List<MarketStall> stalls = marketStallService.findFreeMarketStalls();
+
+        return new ResponseEntity<>(stalls, HttpStatus.OK);
     }
 }

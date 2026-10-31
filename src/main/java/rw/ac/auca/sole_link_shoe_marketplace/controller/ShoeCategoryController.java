@@ -5,8 +5,8 @@ import rw.ac.auca.sole_link_shoe_marketplace.service.ShoeCategoryService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.UUID;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/shoe-categories")
@@ -65,5 +65,13 @@ public class ShoeCategoryController {
         }
 
         return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+
+    @GetMapping("/unused")
+    public ResponseEntity<List<ShoeCategory>> findUnusedCategories() {
+
+        List<ShoeCategory> categories = shoeCategoryService.findUnusedCategories();
+
+        return new ResponseEntity<>(categories, HttpStatus.OK);
     }
 }

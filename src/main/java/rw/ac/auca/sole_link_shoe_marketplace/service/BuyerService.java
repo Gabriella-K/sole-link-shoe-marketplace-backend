@@ -2,6 +2,7 @@ package rw.ac.auca.sole_link_shoe_marketplace.service;
 
 import rw.ac.auca.sole_link_shoe_marketplace.domain.Buyer;
 import rw.ac.auca.sole_link_shoe_marketplace.repository.BuyerRepository;
+import rw.ac.auca.sole_link_shoe_marketplace.repository.VendorRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,9 +13,11 @@ import java.util.UUID;
 public class BuyerService {
 
     private final BuyerRepository buyerRepository;
+    private final VendorRepository vendorRepository;
 
-    public BuyerService(BuyerRepository buyerRepository) {
+    public BuyerService(BuyerRepository buyerRepository, VendorRepository vendorRepository) {
         this.buyerRepository = buyerRepository;
+        this.vendorRepository = vendorRepository;
     }
 
     public String save(Buyer buyer) {
@@ -53,4 +56,14 @@ public class BuyerService {
     public List<Buyer> findByLastName(String lastName) {
         return buyerRepository.findByLastNameIgnoreCaseOrderByFirstNameAsc(lastName);
     }
+
+    public Optional<List<Buyer>> findBuyersOfVendor(UUID vendorId) {
+
+        if (!vendorRepository.existsById(vendorId)) {
+            return Optional.empty();
+        }
+
+        return Optional.of(buyerRepository.findBuyersOfVendor(vendorId));
+    }    
+
 }

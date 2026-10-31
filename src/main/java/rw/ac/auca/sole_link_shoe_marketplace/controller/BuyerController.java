@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.UUID;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/buyers")
@@ -71,5 +72,19 @@ public class BuyerController {
         List<Buyer> buyers = buyerService.findByLastName(lastName);
 
         return new ResponseEntity<>(buyers, HttpStatus.OK);
+    }
+
+    @GetMapping("/of-vendor/{vendorId}")
+    public ResponseEntity<?> findBuyersOfVendor(@PathVariable UUID vendorId) {
+
+        Optional<List<Buyer>> result = buyerService.findBuyersOfVendor(vendorId);
+
+        if (result.isEmpty()) {
+            return new ResponseEntity<>(
+                    "The vendor with that id does not exist",
+                    HttpStatus.NOT_FOUND);
+        } else {
+            return new ResponseEntity<>(result.get(), HttpStatus.OK);
+        }
     }
 }

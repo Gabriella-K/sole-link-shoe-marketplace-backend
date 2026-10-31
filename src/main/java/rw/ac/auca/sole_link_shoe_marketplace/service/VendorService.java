@@ -45,8 +45,11 @@ public class VendorService {
         if (vendorRepository.findById(id).isEmpty()) {
             return "The vendor with that id does not exist";
         }
-
         vendorRepository.deleteById(id);
         return "Vendor deleted successfully";
+    }
+
+    public List<Vendor> findByShoeCategoryName(String name) {
+        return vendorRepository.findByShoeCategoryName(name);
     }
 }

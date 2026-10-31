@@ -5,8 +5,8 @@ import rw.ac.auca.sole_link_shoe_marketplace.service.VendorService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.UUID;
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/vendors")
@@ -63,5 +63,14 @@ public class VendorController {
         }
 
         return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+
+    @GetMapping("/by-shoe-category")
+    public ResponseEntity<List<Vendor>> findByShoeCategoryName(
+            @RequestParam String name) {
+
+        List<Vendor> vendors = vendorService.findByShoeCategoryName(name);
+
+        return new ResponseEntity<>(vendors, HttpStatus.OK);
     }
 }

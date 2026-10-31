@@ -49,4 +49,8 @@ public class MarketStallService {
         marketStallRepository.deleteById(id);
         return "Market stall deleted successfully";
     }
+
+    public List<MarketStall> findFreeMarketStalls() {
+        return marketStallRepository.findFreeMarketStalls();
+    }
 }

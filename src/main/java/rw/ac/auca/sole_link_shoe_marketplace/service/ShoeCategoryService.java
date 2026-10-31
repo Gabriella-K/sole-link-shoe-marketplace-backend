@@ -49,4 +49,8 @@ public class ShoeCategoryService {
         shoeCategoryRepository.deleteById(id);
         return "Shoe category deleted successfully";
     }
+
+    public List<ShoeCategory> findUnusedCategories() {
+        return shoeCategoryRepository.findUnusedCategories();
+    }
 }
