@@ -129,4 +129,26 @@ public class ShoeOrderController {
 
         return new ResponseEntity<>(message, HttpStatus.OK);
     }
+
+    @GetMapping("/stats/by-status")
+    public ResponseEntity<List<Object[]>> countOrdersByStatus() {
+
+        List<Object[]> results = shoeOrderService.countOrdersByStatus();
+
+        return new ResponseEntity<>(results, HttpStatus.OK);
+    }
+
+    @PatchMapping("/cancel-day")
+    public ResponseEntity<String> cancelOrdersForVendorOnDate(
+            @RequestParam UUID vendorId,
+            @RequestParam String date) {
+
+        LocalDate orderDate = LocalDate.parse(date);
+
+        String message = shoeOrderService.cancelOrdersForVendorOnDate(
+                vendorId,
+                orderDate);
+
+        return new ResponseEntity<>(message, HttpStatus.OK);
+    }
 }

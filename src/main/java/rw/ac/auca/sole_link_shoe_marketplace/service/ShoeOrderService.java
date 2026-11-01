@@ -5,6 +5,7 @@ import rw.ac.auca.sole_link_shoe_marketplace.domain.OrderStatus;
 import rw.ac.auca.sole_link_shoe_marketplace.domain.ShoeOrder;
 import rw.ac.auca.sole_link_shoe_marketplace.repository.ShoeOrderRepository;
 import org.springframework.stereotype.Service;
+import jakarta.transaction.Transactional;
 import rw.ac.auca.sole_link_shoe_marketplace.repository.ReceiptRepository;
 import java.time.LocalDate;
 import java.util.List;
@@ -141,5 +142,21 @@ public class ShoeOrderService {
         shoeOrderRepository.save(order);
 
         return "Shoe order status updated successfully";
+    }
+
+    public List<Object[]> countOrdersByStatus() {
+        return shoeOrderRepository.countOrdersByStatus();
+    }
+
+    @Transactional
+    public String cancelOrdersForVendorOnDate(UUID vendorId, LocalDate date) {
+
+        int numberOfOrders = shoeOrderRepository.cancelOrdersForVendorOnDate(
+                vendorId,
+                date,
+                OrderStatus.CANCELLED,
+                OrderStatus.DELIVERED);
+
+        return numberOfOrders + " shoe orders cancelled";
     }
 }
