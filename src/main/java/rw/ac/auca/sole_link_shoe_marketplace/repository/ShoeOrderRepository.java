@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-
 import java.util.UUID;
 import java.time.LocalDate;
 import java.util.List;
@@ -39,4 +38,8 @@ public interface ShoeOrderRepository extends JpaRepository<ShoeOrder, UUID> {
         @Param("cancelled") OrderStatus cancelled,
         @Param("delivered") OrderStatus delivered
     );
+
+    long countByOrderDate(LocalDate orderDate);
+
+    long countByStatus(OrderStatus status);
 }

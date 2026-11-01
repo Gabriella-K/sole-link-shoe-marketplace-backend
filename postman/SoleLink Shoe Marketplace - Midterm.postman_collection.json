@@ -1,0 +1,1727 @@
+{
+  "info": {
+    "_postman_id": "dbbf6801-66dd-48d3-a531-d52a344f3d86",
+    "name": "SoleLink Shoe Marketplace - Midterm",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "48822470",
+    "_collection_link": "https://go.postman.co/collection/48822470-dbbf6801-66dd-48d3-a531-d52a344f3d86?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "00- Seed Data",
+      "item": [
+        {
+          "name": "01 - Vendors",
+          "item": [
+            {
+              "name": "Vendor 1 - Kigali Sneakers Hub",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"businessName\": \"Kigali Sneakers Hub\",\r\n  \"ownerName\": \"Eric\",\r\n  \"phone\": \"0781111111\",\r\n  \"marketStall\": {\r\n    \"id\": \"9ec05290-c8f4-484d-8d3e-3c693829c409\"\r\n  },\r\n  \"shoeCategories\": [\r\n    {\r\n      \"id\": \"ddec7021-f87d-417e-92cc-d0e025063c1d\"\r\n    },\r\n    {\r\n      \"id\": \"3f046ac4-ccee-4c24-8b11-368dbb2b6035\"\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/vendors/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "vendors",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Vendor 2 - Classic Footwear",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"businessName\": \"Classic Footwear\",\r\n  \"ownerName\": \"Alice\",\r\n  \"phone\": \"0782222222\",\r\n  \"marketStall\": {\r\n    \"id\": \"b6c943d0-6bab-4efa-b152-272146a9029f\"\r\n  },\r\n  \"shoeCategories\": [\r\n    {\r\n      \"id\": \"ee85f05c-11d6-45c8-b84e-9c7c6b4d2b1b\"\r\n    },\r\n    {\r\n      \"id\": \"3f046ac4-ccee-4c24-8b11-368dbb2b6035\"\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/vendors/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "vendors",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Vendor 2 - Urban Steps",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"businessName\": \"Urban Steps\",\r\n  \"ownerName\": \"David\",\r\n  \"phone\": \"0783333333\",\r\n  \"marketStall\": {\r\n    \"id\": \"0a0ec1c8-441a-46bc-9339-90be04a48ef7\"\r\n  },\r\n  \"shoeCategories\": [\r\n    {\r\n      \"id\": \"ddec7021-f87d-417e-92cc-d0e025063c1d\"\r\n    },\r\n    {\r\n      \"id\": \"ee85f05c-11d6-45c8-b84e-9c7c6b4d2b1b\"\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/vendors/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "vendors",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get All Vendors",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8082/api/vendors/all",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "vendors",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "02 - Buyers",
+          "item": [
+            {
+              "name": "Buyer 1",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"firstName\": \"Gabriella\",\r\n  \"lastName\": \"Ucyeye\",\r\n  \"phone\": \"0784444441\",\r\n  \"shoeSize\": 38\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/buyers/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "buyers",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Buyer 2",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"firstName\": \"Diane\",\r\n  \"lastName\": \"Ucyeye\",\r\n  \"phone\": \"0784444442\",\r\n  \"shoeSize\": 39\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/buyers/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "buyers",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Buyer 3",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"firstName\": \"Eric\",\r\n  \"lastName\": \"Mugisha\",\r\n  \"phone\": \"0784444443\",\r\n  \"shoeSize\": 42\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/buyers/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "buyers",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Buyer 4",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"firstName\": \"Alice\",\r\n  \"lastName\": \"Uwase\",\r\n  \"phone\": \"0784444444\",\r\n  \"shoeSize\": 37\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/buyers/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "buyers",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Buyer 5",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"firstName\": \"David\",\r\n  \"lastName\": \"Niyonzima\",\r\n  \"phone\": \"0784444445\",\r\n  \"shoeSize\": 43\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/buyers/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "buyers",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Get All Buyers",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8082/api/buyers/all",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "buyers",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "04 - ShoeCategory",
+          "item": [
+            {
+              "name": "Seed sneakers",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Sneakers\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-categories/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-categories",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Seed Sandals",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Sandals\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-categories/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-categories",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Seed Boots",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Boots\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-categories/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-categories",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Seed Formal Shoes",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"name\": \"Formal Shoes\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-categories/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-categories",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "05 - MarketStall",
+          "item": [
+            {
+              "name": "Seed Stall 11",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"stallNumber\":11,\r\n    \"name\":\"Kigali Shoe Corner\"\r\n\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/market-stalls/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "market-stalls",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Seed Stall 12",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"stallNumber\":12,\r\n    \"name\":\"Classic Footwear\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/market-stalls/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "market-stalls",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Seed Stall 13",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\"stallNumber\":13,\"name\":\"Urban Steps\"}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/market-stalls/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "market-stalls",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Seed Stall 14",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "\t{\"stallNumber\":14,\"name\":\"Available Stall\"}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/market-stalls/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "market-stalls",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "06 - ShoeOrder",
+          "item": [
+            {
+              "name": "Order 1 - A Nike order",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderDate\": \"2026-10-20\",\r\n    \"status\": \"PLACED\",\r\n    \"brand\": \"Nike\",\r\n    \"price\": 15000,\r\n    \"buyer\": {\r\n        \"id\": \"bc74a9b5-e660-44b4-b649-06389363e69e\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"5a841321-ec14-4b0e-8c0c-861e3fe0db6a\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Order 2 - An Adidas order",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderDate\": \"2026-10-20\",\r\n    \"status\": \"PACKED\",\r\n    \"brand\": \"Adidas\",\r\n    \"price\": 18000,\r\n    \"buyer\": {\r\n        \"id\": \"dfb73cac-a3d2-4c77-90b3-24cbd6583dc6\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"5a841321-ec14-4b0e-8c0c-861e3fe0db6a\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Order 3 - A Puma order",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderDate\": \"2026-10-20\",\r\n    \"status\": \"DELIVERED\",\r\n    \"brand\": \"Puma\",\r\n    \"price\": 22000,\r\n    \"buyer\": {\r\n        \"id\": \"b38bff03-fb43-40e1-9848-b4e1e9fbc2a3\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"5a841321-ec14-4b0e-8c0c-861e3fe0db6a\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Order 4 - A Converse order",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderDate\": \"2026-10-21\",\r\n    \"status\": \"DELIVERED\",\r\n    \"brand\": \"Converse\",\r\n    \"price\": 12000,\r\n    \"buyer\": {\r\n        \"id\": \"6e58ee6b-21a7-41b0-8288-670097503f34\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"43006d92-d5fc-48f9-bfd2-79b389842973\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Order 5 - A Reebok order",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderDate\": \"2026-10-22\",\r\n    \"status\": \"CANCELLED\",\r\n    \"brand\": \"Reebok\",\r\n    \"price\": 20000,\r\n    \"buyer\": {\r\n        \"id\": \"9829ba61-496c-4a2d-b465-c0f5692c783a\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"43006d92-d5fc-48f9-bfd2-79b389842973\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Order - Another Nike Order",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderDate\": \"2026-10-23\",\r\n    \"status\": \"PLACED\",\r\n    \"brand\": \"Nike\",\r\n    \"price\": 16000,\r\n    \"buyer\": {\r\n        \"id\": \"bc74a9b5-e660-44b4-b649-06389363e69e\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"e6d038f2-9a4c-4990-9f4f-8200d92ff9ad\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Order 7 - Another Adidas order",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderDate\": \"2026-10-24\",\r\n    \"status\": \"PACKED\",\r\n    \"brand\": \"Adidas\",\r\n    \"price\": 19000,\r\n    \"buyer\": {\r\n        \"id\": \"dfb73cac-a3d2-4c77-90b3-24cbd6583dc6\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"e6d038f2-9a4c-4990-9f4f-8200d92ff9ad\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Order 8 - A New Balance order",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderDate\": \"2026-10-25\",\r\n    \"status\": \"CANCELLED\",\r\n    \"brand\": \"New Balance\",\r\n    \"price\": 25000,\r\n    \"buyer\": {\r\n        \"id\": \"b38bff03-fb43-40e1-9848-b4e1e9fbc2a3\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"5a841321-ec14-4b0e-8c0c-861e3fe0db6a\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Order 9 - A Clarks order",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderDate\": \"2026-10-26\",\r\n    \"status\": \"DELIVERED\",\r\n    \"brand\": \"Clarks\",\r\n    \"price\": 30000,\r\n    \"buyer\": {\r\n        \"id\": \"bc74a9b5-e660-44b4-b649-06389363e69e\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"43006d92-d5fc-48f9-bfd2-79b389842973\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Order 10 - A Vans order",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"orderDate\": \"2026-10-27\",\r\n    \"status\": \"PLACED\",\r\n    \"brand\": \"Vans\",\r\n    \"price\": 14000,\r\n    \"buyer\": {\r\n        \"id\": \"6e58ee6b-21a7-41b0-8288-670097503f34\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"e6d038f2-9a4c-4990-9f4f-8200d92ff9ad\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/save",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "save"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "All orders",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:8082/api/shoe-orders/all",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8082",
+                  "path": [
+                    "api",
+                    "shoe-orders",
+                    "all"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "01 - PART A - CRUD",
+      "item": []
+    },
+    {
+      "name": "02 - PART B - Derived Queries",
+      "item": [
+        {
+          "name": "B1 - Find buyers by last name",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/buyers/by-last-name?lastName=ucyeye",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "buyers",
+                "by-last-name"
+              ],
+              "query": [
+                {
+                  "key": "lastName",
+                  "value": "ucyeye"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "B2 - Find shoe orders by status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/by-status?status=PACKED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "by-status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "PACKED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "B3 - Find orders between dates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/between?start=2026-10-01&end=2026-10-31",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "between"
+              ],
+              "query": [
+                {
+                  "key": "start",
+                  "value": "2026-10-01"
+                },
+                {
+                  "key": "end",
+                  "value": "2026-10-31"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "03 - PART C - JPQL Queries",
+      "item": [
+        {
+          "name": "C1 - Find vendors by shoe category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/vendors/by-shoe-category?name=sneak",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "vendors",
+                "by-shoe-category"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "sneak"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C2 - Find Free Market Stalls",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/market-stalls/free",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "market-stalls",
+                "free"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C3 - Find Unused Shoe Categories",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-categories/unused",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-categories",
+                "unused"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "C4 - Find Buyers of Vendor",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/buyers/of-vendor/5a841321-ec14-4b0e-8c0c-861e3fe0db6a",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "buyers",
+                "of-vendor",
+                "5a841321-ec14-4b0e-8c0c-861e3fe0db6a"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "04 - PART D - Business Rules",
+      "item": [
+        {
+          "name": "D1 - Reject Past Order Date",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"orderDate\": \"2026-10-30\",\r\n    \"status\": \"DELIVERED\",\r\n    \"brand\": \"Nike\",\r\n    \"price\": 45000,\r\n    \"buyer\": {\r\n        \"id\": \"bc74a9b5-e660-44b4-b649-06389363e69e\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"5a841321-ec14-4b0e-8c0c-861e3fe0db6a\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Update PLACED to PACKED",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"orderDate\": \"2026-11-03\",\r\n    \"status\": \"DELIVERED\",\r\n    \"brand\": \"Adidas\",\r\n    \"price\": 50000,\r\n    \"buyer\": {\r\n        \"id\": \"bc74a9b5-e660-44b4-b649-06389363e69e\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"e6d038f2-9a4c-4990-9f4f-8200d92ff9ad\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/26cd938a-29b6-4307-9497-b02bf0ca0014/status?status=PACKED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "26cd938a-29b6-4307-9497-b02bf0ca0014",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "PACKED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D1 - Test2: Duplicate vendor order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"orderDate\": \"2026-11-03\",\r\n    \"status\": \"DELIVERED\",\r\n    \"brand\": \"Adidas\",\r\n    \"price\": 50000,\r\n    \"buyer\": {\r\n        \"id\": \"bc74a9b5-e660-44b4-b649-06389363e69e\"\r\n    },\r\n    \"vendor\": {\r\n        \"id\": \"e6d038f2-9a4c-4990-9f4f-8200d92ff9ad\"\r\n    }\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/save",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "save"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Test2: PACKED to DELIVERED",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/26cd938a-29b6-4307-9497-b02bf0ca0014/status?status=DELIVERED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "26cd938a-29b6-4307-9497-b02bf0ca0014",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "DELIVERED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Test 3: Reject DELIVERED to CANCELLED",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/26cd938a-29b6-4307-9497-b02bf0ca0014/status?status=CANCELLED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "26cd938a-29b6-4307-9497-b02bf0ca0014",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "CANCELLED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D2 - Test4: Reject CANCELLED to PACKED",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/72e8c3e0-5f66-408c-927c-655e02945b96/status?status=PACKED",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "72e8c3e0-5f66-408c-927c-655e02945b96",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "PACKED"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D3 - Add a shoe category to a vendor",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/vendors/5a841321-ec14-4b0e-8c0c-861e3fe0db6a/shoe-categories/ee85f05c-11d6-45c8-b84e-9c7c6b4d2b1b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "vendors",
+                "5a841321-ec14-4b0e-8c0c-861e3fe0db6a",
+                "shoe-categories",
+                "ee85f05c-11d6-45c8-b84e-9c7c6b4d2b1b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D3 - Test 2: Reject a duplicate category",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/vendors/5a841321-ec14-4b0e-8c0c-861e3fe0db6a/shoe-categories/ee85f05c-11d6-45c8-b84e-9c7c6b4d2b1b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "vendors",
+                "5a841321-ec14-4b0e-8c0c-861e3fe0db6a",
+                "shoe-categories",
+                "ee85f05c-11d6-45c8-b84e-9c7c6b4d2b1b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D3 - Test3: Vendor does not exist",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/vendors/11111111-1111-1111-1111-111111111111/shoe-categories/ee85f05c-11d6-45c8-b84e-9c7c6b4d2b1b",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "vendors",
+                "11111111-1111-1111-1111-111111111111",
+                "shoe-categories",
+                "ee85f05c-11d6-45c8-b84e-9c7c6b4d2b1b"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D3 - Test 4: Shoe category does not exist",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/vendors/5a841321-ec14-4b0e-8c0c-861e3fe0db6a/shoe-categories/11111111-1111-1111-1111-111111111111",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "vendors",
+                "5a841321-ec14-4b0e-8c0c-861e3fe0db6a",
+                "shoe-categories",
+                "11111111-1111-1111-1111-111111111111"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Successfully change a vendor's stall",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/vendors/5a841321-ec14-4b0e-8c0c-861e3fe0db6a/market-stall?stallNumber=14",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "vendors",
+                "5a841321-ec14-4b0e-8c0c-861e3fe0db6a",
+                "market-stall"
+              ],
+              "query": [
+                {
+                  "key": "stallNumber",
+                  "value": "14"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Test 2: Reject an occupied market stall",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/vendors/5a841321-ec14-4b0e-8c0c-861e3fe0db6a/market-stall?stallNumber=12",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "vendors",
+                "5a841321-ec14-4b0e-8c0c-861e3fe0db6a",
+                "market-stall"
+              ],
+              "query": [
+                {
+                  "key": "stallNumber",
+                  "value": "12"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Test3: Vendor does not exist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/vendors/11111111-1111-1111-1111-111111111111/market-stall?stallNumber=14",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "vendors",
+                "11111111-1111-1111-1111-111111111111",
+                "market-stall"
+              ],
+              "query": [
+                {
+                  "key": "stallNumber",
+                  "value": "14"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "D4 - Test 4: Market stall does not exist",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/vendors/5a841321-ec14-4b0e-8c0c-861e3fe0db6a/market-stall?stallNumber=999",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "vendors",
+                "5a841321-ec14-4b0e-8c0c-861e3fe0db6a",
+                "market-stall"
+              ],
+              "query": [
+                {
+                  "key": "stallNumber",
+                  "value": "999"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "05 - PART E - Receipts",
+      "item": [
+        {
+          "name": "E1- Test 1: Save a receipt for a DELIVERED order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"paymentMethod\": \"MOMO\",\r\n    \"note\": \"Payment received successfully\",\r\n    \"amountPaid\": 22000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/receipts/save?shoeOrderId=aba2f917-a18b-49e8-99fe-072a39d8218c",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "receipts",
+                "save"
+              ],
+              "query": [
+                {
+                  "key": "shoeOrderId",
+                  "value": "aba2f917-a18b-49e8-99fe-072a39d8218c"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E1 - Test2: Reject a receipt for an undelivered order",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"paymentMethod\": \"MOMO\",\r\n    \"note\": \"Payment for Adidas shoes\",\r\n    \"amountPaid\": 19000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/receipts/save?shoeOrderId=9a4a06ed-2087-4108-9428-0c936f1059fe",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "receipts",
+                "save"
+              ],
+              "query": [
+                {
+                  "key": "shoeOrderId",
+                  "value": "9a4a06ed-2087-4108-9428-0c936f1059fe"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E2 - Retrieve receipts by buyer's phone number",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/receipts/buyer/0784444443",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "receipts",
+                "buyer",
+                "0784444443"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E3 - Delete an existing receipts",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/receipts/delete/dcef62d8-ac8e-4248-b55a-90a644178efb",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "receipts",
+                "delete",
+                "dcef62d8-ac8e-4248-b55a-90a644178efb"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E3 - Test 2: Deleting a receipt that doesn't exist",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/receipts/delete/11111111-1111-1111-1111-111111111111",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "receipts",
+                "delete",
+                "11111111-1111-1111-1111-111111111111"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "E3 - Test 3: Deleting a shoe order that still has receipts",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"paymentMethod\": \"CASH\",\r\n    \"note\": \"Payment for Converse shoes\",\r\n    \"amountPaid\": 12000\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/delete/0d63b8d3-9ed1-4267-890f-63907c3ac821",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "delete",
+                "0d63b8d3-9ed1-4267-890f-63907c3ac821"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "06 - PART F - Reports and Bulk Updates",
+      "item": [
+        {
+          "name": "Orders grouped by status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "localhost:8082/api/shoe-orders/stats/by-status",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "stats",
+                "by-status"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Cancel orders for a vendor on specific date",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/cancel-day?vendorId=5a841321-ec14-4b0e-8c0c-861e3fe0db6a&date=2026-10-20",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "cancel-day"
+              ],
+              "query": [
+                {
+                  "key": "vendorId",
+                  "value": "5a841321-ec14-4b0e-8c0c-861e3fe0db6a"
+                },
+                {
+                  "key": "date",
+                  "value": "2026-10-20"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "07 - BONUS",
+      "item": [
+        {
+          "name": "Summary",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/dashboard/summary",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "dashboard",
+                "summary"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Pagination",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8082/api/shoe-orders/page?page=0&size=5&sort=orderDate,desc",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8082",
+              "path": [
+                "api",
+                "shoe-orders",
+                "page"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "5"
+                },
+                {
+                  "key": "sort",
+                  "value": "orderDate,desc"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

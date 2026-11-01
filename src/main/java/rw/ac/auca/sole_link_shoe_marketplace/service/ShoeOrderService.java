@@ -4,6 +4,8 @@ package rw.ac.auca.sole_link_shoe_marketplace.service;
 import rw.ac.auca.sole_link_shoe_marketplace.domain.OrderStatus;
 import rw.ac.auca.sole_link_shoe_marketplace.domain.ShoeOrder;
 import rw.ac.auca.sole_link_shoe_marketplace.repository.ShoeOrderRepository;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import jakarta.transaction.Transactional;
 import rw.ac.auca.sole_link_shoe_marketplace.repository.ReceiptRepository;
@@ -158,5 +160,9 @@ public class ShoeOrderService {
                 OrderStatus.DELIVERED);
 
         return numberOfOrders + " shoe orders cancelled";
+    }
+
+    public Page<ShoeOrder> getPaginatedOrders(Pageable pageable) {
+        return shoeOrderRepository.findAll(pageable);
     }
 }

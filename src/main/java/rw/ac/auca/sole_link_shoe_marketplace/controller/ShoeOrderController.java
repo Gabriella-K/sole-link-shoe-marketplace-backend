@@ -5,10 +5,13 @@ import rw.ac.auca.sole_link_shoe_marketplace.domain.OrderStatus;
 import rw.ac.auca.sole_link_shoe_marketplace.domain.ShoeOrder;
 import rw.ac.auca.sole_link_shoe_marketplace.service.ShoeOrderService;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import java.util.UUID;
 import java.time.LocalDate;
 import java.util.List;
@@ -150,5 +153,25 @@ public class ShoeOrderController {
                 orderDate);
 
         return new ResponseEntity<>(message, HttpStatus.OK);
+    }
+
+    @GetMapping("/page")
+    public Page<ShoeOrder> getPaginatedOrders(
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "5") int size,
+        @RequestParam(defaultValue = "orderDate,desc") String sort) {
+
+    String[] sortDetails = sort.split(",");
+
+    Pageable pageable = PageRequest.of(
+            page,
+            size,
+            Sort.by(
+                    Sort.Direction.fromString(sortDetails[1]),
+                    sortDetails[0]
+            )
+    );
+
+    return shoeOrderService.getPaginatedOrders(pageable);
     }
 }
