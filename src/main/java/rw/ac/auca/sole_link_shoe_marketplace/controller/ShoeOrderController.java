@@ -79,8 +79,12 @@ public class ShoeOrderController {
 
         String message = shoeOrderService.delete(id);
 
-        if (message.contains("does not exist")) {
+        if (message.equals("The shoe order with that id does not exist")) {
             return new ResponseEntity<>(message, HttpStatus.NOT_FOUND);
+        }
+
+        if (message.equals("That shoe order has receipts, delete them first")) {
+            return new ResponseEntity<>(message, HttpStatus.CONFLICT);
         }
 
         return new ResponseEntity<>(message, HttpStatus.OK);

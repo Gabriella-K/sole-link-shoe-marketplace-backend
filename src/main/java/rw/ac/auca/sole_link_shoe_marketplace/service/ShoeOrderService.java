@@ -4,9 +4,8 @@ package rw.ac.auca.sole_link_shoe_marketplace.service;
 import rw.ac.auca.sole_link_shoe_marketplace.domain.OrderStatus;
 import rw.ac.auca.sole_link_shoe_marketplace.domain.ShoeOrder;
 import rw.ac.auca.sole_link_shoe_marketplace.repository.ShoeOrderRepository;
-
 import org.springframework.stereotype.Service;
-
+import rw.ac.auca.sole_link_shoe_marketplace.repository.ReceiptRepository;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
@@ -16,9 +15,11 @@ import java.util.UUID;
 public class ShoeOrderService {
 
     private final ShoeOrderRepository shoeOrderRepository;
+    private final ReceiptRepository receiptRepository;
 
-    public ShoeOrderService(ShoeOrderRepository shoeOrderRepository) {
+    public ShoeOrderService(ShoeOrderRepository shoeOrderRepository, ReceiptRepository receiptRepository) {
         this.shoeOrderRepository = shoeOrderRepository;
+        this.receiptRepository = receiptRepository;
     }
 
     public String save(ShoeOrder shoeOrder) {
@@ -60,7 +61,6 @@ public class ShoeOrderService {
 
         ShoeOrder order = existingOrder.get();
 
-        // Update the other fields
         order.setOrderDate(shoeOrder.getOrderDate());
         order.setBrand(shoeOrder.getBrand());
         order.setPrice(shoeOrder.getPrice());
@@ -74,8 +74,16 @@ public class ShoeOrderService {
 
     public String delete(UUID id) {
 
-        if (shoeOrderRepository.findById(id).isEmpty()) {
+        Optional<ShoeOrder> orderResult = shoeOrderRepository.findById(id);
+
+        if (orderResult.isEmpty()) {
             return "The shoe order with that id does not exist";
+        }
+
+        ShoeOrder shoeOrder = orderResult.get();
+
+        if (receiptRepository.existsByShoeOrder(shoeOrder)) {
+            return "That shoe order has receipts, delete them first";
         }
 
         shoeOrderRepository.deleteById(id);
